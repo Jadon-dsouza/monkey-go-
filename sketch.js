@@ -24,7 +24,7 @@ createCanvas(600, 600);
  
  monkey.scale= 0.1;
 
- ground = createSprite(400,350,2000,10);
+ ground = createSprite(400,380,2000,10);
  ground.velocityX=-4;
  ground.x = ground.width /2
  console.log(ground.x);
@@ -48,6 +48,10 @@ createCanvas(600, 600);
 function draw() {
 background(255);
 text("survival time : "+ survival , 500,50);
+  
+ if (ground.x < 0){
+      ground.x = ground.width/2;
+    }
   
 drawSprites();
 }
