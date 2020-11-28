@@ -34,7 +34,7 @@ createCanvas(600, 600);
  banana.scale=0.1;
   
   obstaclesGroup = createGroup();
-  cloudsGroup = createGroup();
+ 
 
   monkey.setCollider("rectangle",0,0,monkey.width,monkey.height);
   monkey.debug = false;
@@ -57,19 +57,13 @@ drawSprites();
 }
   
 function spawnObstacles(){
- if (frameCount % 60 === 0){
+ if (frameCount % 200 === 0){
    var obstacle = createSprite(600,165,10,40);
    
-   obstacle.velocityX = -(6 + score/100);
+   obstacle.setCollider("rectangle",0,0,obstacle.width,obstacle.height);
+  obstacle.debug = false;
    
-    //generate random obstacles
-    var rand = Math.round(random(1,6));
-    switch(rand) {
-      case 1: obstacle.addImage(obstacle);
-             
-    }
-   
-    //assign scale and lifetime to the obstacle           
+            
     obstacle.scale = 0.5;
     obstacle.lifetime = 300;
    
